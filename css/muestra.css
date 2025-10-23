@@ -3,50 +3,50 @@
 -------------------- */
 .contenedor_muestra {
     display: flex;
-    flex-direction: column; /* Cambia a columna por defecto para móvil */
-    gap: 15px; /* Reduce el gap para móvil */
+    flex-direction: column; /* Columna por defecto (móvil) */
+    gap: 15px;
     background-color: #f0f0f0;
-    padding: 15px; /* Reduce el padding para móvil */
-    border-radius: 0; /* Elimina border-radius si se usa a pantalla completa */
-    box-shadow: none; /* Elimina sombra si se usa a pantalla completa */
-    max-width: 100%; /* Ocupa el 100% del ancho disponible */
-    margin: 0; /* Elimina el margen si se usa a pantalla completa */
-    min-height: 100vh; /* Ocupa al menos el alto de la ventana */
-    overflow-y: auto; /* Permite scroll si el contenido es largo */
+    padding: 15px;
+    border-radius: 0;
+    box-shadow: none;
+    max-width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    overflow-y: auto;
 }
 
 .contenedor_imagen_muestra {
-    width: 100%; /* Ocupa todo el ancho disponible */
-    max-width: 100%; /* Asegura que no desborde */
-    text-align: center; /* Centra la imagen si es más pequeña que el contenedor */
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
 }
 
 .contenedor_imagen_muestra img {
     width: 100%;
-    height: auto; /* Altura automática para mantener proporciones */
-    max-height: 400px; /* Limita la altura máxima en móvil */
-    object-fit: contain; /* Asegura que la imagen se vea completa */
-    border-radius: 0; /* Elimina border-radius si la imagen ocupa todo el ancho */
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 0;
 }
 
 .contenido_muestra {
     flex: 1;
-    padding: 0 5px; /* Pequeño padding horizontal para el contenido */
+    padding: 0 5px;
 }
 
 .contenido_muestra h2 {
-    font-size: 22px; /* Ajusta tamaño de fuente */
+    font-size: 22px;
     margin-bottom: 8px;
 }
 
 .contenido_muestra h3 {
-    font-size: 18px; /* Ajusta tamaño de fuente */
+    font-size: 18px;
     margin-bottom: 8px;
     color: #555;
 }
 
 .contenido_muestra p {
-    font-size: 15px; /* Ajusta tamaño de fuente */
+    font-size: 15px;
     margin-bottom: 8px;
     line-height: 1.5;
 }
@@ -56,49 +56,49 @@
 -------------------- */
 .acciones_sociales_muestra {
     display: flex;
-    flex-wrap: wrap; /* Permite que los botones se envuelvan */
-    justify-content: center; /* Centra los botones */
-    gap: 10px; /* Espacio entre botones */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin-bottom: 15px;
 }
 
 .acciones_sociales_muestra button {
-    margin-right: 0; /* Elimina el margin-right si hay gap */
-    flex: 1 1 auto; /* Permite que los botones crezcan/encojan */
-    min-width: 120px; /* Ancho mínimo para cada botón */
+    margin-right: 0;
+    flex: 1 1 auto;
+    min-width: 120px;
     font-size: 14px;
-    padding: 10px 15px; /* Aumenta el padding para hacerlos más fáciles de tocar */
-    border-radius: 20px; /* Bordes más redondeados */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Añade una pequeña sombra */
+    padding: 10px 15px;
+    border-radius: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     transition: all 0.2s ease;
 }
 
 .acciones_sociales_muestra .me_gusta_muestra {
-    background-color: #6c757d; /* Gris más estético */
+    background-color: #6c757d;
 }
 
 .acciones_sociales_muestra .me_gusta_muestra.active {
-    background-color: #dc3545; /* Rojo vibrante */
+    background-color: #dc3545;
 }
 
 .acciones_sociales_muestra .guardar_muestra {
-    background-color: #6c757d; /* Gris más estético */
+    background-color: #6c757d;
 }
 
 .acciones_sociales_muestra .guardar_muestra.active {
-    background-color: #ffc107; /* Amarillo más estético */
-    color: #333; /* Texto oscuro en amarillo */
+    background-color: #ffc107;
+    color: #333;
 }
 
 .boton_muestra {
-    background-color: #28a745; /* Verde más moderno */
+    background-color: #28a745;
     padding: 12px 20px;
     font-size: 16px;
-    margin: 10px auto; /* Centra el botón */
-    display: block; /* Asegura que ocupe su propia línea */
-    width: calc(100% - 20px); /* Ocupa casi todo el ancho */
-    max-width: 300px; /* Limita el ancho máximo */
-    border-radius: 25px; /* Bordes más redondeados */
+    margin: 10px auto;
+    display: block;
+    width: calc(100% - 20px);
+    max-width: 300px;
+    border-radius: 25px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -110,10 +110,10 @@
     background-color: #e0e0e0;
     color: #333;
 }
+
 .boton_muestra.siguiendo_muestra:hover {
     background-color: #d0d0d0;
 }
-
 
 /* --------------------
    Información del creador
@@ -123,17 +123,17 @@
     align-items: center;
     margin-bottom: 15px;
     cursor: pointer;
-    background-color: #e9ecef; /* Fondo sutil para destacar */
+    background-color: #e9ecef;
     padding: 10px;
     border-radius: 10px;
 }
 
 .informacion_creador_muestra img {
-    width: 40px; /* Aumenta el tamaño del avatar */
+    width: 40px;
     height: 40px;
     border-radius: 50%;
     margin-right: 10px;
-    border: 2px solid #fff; /* Borde blanco alrededor del avatar */
+    border: 2px solid #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
 }
 
@@ -151,25 +151,25 @@
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Aumenta el gap entre comentarios */
+    gap: 12px;
 }
 
 .comentario {
-    background: #ffffff; /* Fondo blanco para los comentarios */
+    background: #ffffff;
     border-radius: 10px;
     padding: 12px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.08); /* Sombra ligera */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
 }
 
 .comentario-header {
     display: flex;
     align-items: center;
-    gap: 10px; /* Espacio entre avatar y nombre */
+    gap: 10px;
     margin-bottom: 5px;
 }
 
 .comentario-foto {
-    width: 35px; /* Ajusta tamaño del avatar de comentario */
+    width: 35px;
     height: 35px;
     border-radius: 50%;
     cursor: pointer;
@@ -191,7 +191,7 @@
 }
 
 .comentario-fecha {
-    font-size: 0.75em; /* Ligeramente más pequeño */
+    font-size: 0.75em;
     color: #999;
 }
 
@@ -200,21 +200,21 @@
 -------------------- */
 .comentario-input {
     display: flex;
-    align-items: flex-start; /* Alinea textarea y botón arriba */
+    align-items: flex-start;
     gap: 10px;
     margin-top: 15px;
     padding: 10px;
-    background-color: #e9ecef; /* Fondo para la caja de input */
+    background-color: #e9ecef;
     border-radius: 10px;
 }
 
 .comentario-input textarea {
     width: 100%;
-    resize: vertical; /* Permite solo redimensionar verticalmente */
-    min-height: 50px; /* Altura mínima para el textarea */
+    resize: vertical;
+    min-height: 50px;
     border-radius: 8px;
     padding: 10px;
-    border: 1px solid #ced4da; /* Borde más suave */
+    border: 1px solid #ced4da;
     font-size: 15px;
     transition: border-color 0.2s ease;
 }
@@ -222,18 +222,18 @@
 .comentario-input textarea:focus {
     border-color: #80bdff;
     outline: none;
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
 }
 
 .comentario-input button {
-    background-color: #007bff; /* Azul primario */
+    background-color: #007bff;
     color: white;
     border: none;
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
     font-size: 15px;
-    white-space: nowrap; /* Evita que el texto del botón se rompa */
+    white-space: nowrap;
     transition: background 0.2s ease, transform 0.1s ease;
 }
 
@@ -242,14 +242,41 @@
     transform: translateY(-1px);
 }
 
-/* Media Query para pantallas un poco más grandes (tablets pequeñas) */
+/* --------------------
+   Footer de comentarios y botón eliminar
+-------------------- */
+.comentario-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.boton-eliminar-comentario {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    transition: background-color 0.2s ease;
+}
+
+.boton-eliminar-comentario:hover {
+    background-color: #c82333;
+}
+
+/* --------------------
+   Media Queries
+-------------------- */
 @media (min-width: 576px) {
     .contenedor_muestra {
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        max-width: 600px; /* Ancho máximo para tablets pequeñas */
-        margin: 20px auto; /* Centrar en pantallas más grandes */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: 20px auto;
     }
 
     .contenedor_imagen_muestra img {
@@ -257,47 +284,46 @@
     }
 }
 
-/* Media Query para pantallas grandes (desktop - layout original) */
 @media (min-width: 850px) {
     .contenedor_muestra {
-        flex-direction: row; /* Vuelve a la dirección de fila */
+        flex-direction: row;
         gap: 20px;
         padding: 20px;
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        max-width: 1200px; /* Vuelve al ancho original */
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        max-width: 1200px;
         margin: 20px auto;
     }
 
     .contenedor_imagen_muestra {
-        width: 350px; /* Ancho fijo para la imagen */
+        width: 350px;
     }
 
     .contenedor_imagen_muestra img {
         height: 350px;
-        max-height: none; /* Elimina la restricción de altura */
+        max-height: none;
         object-fit: contain;
         border-radius: 10px;
     }
 
     .contenido_muestra {
-        padding: 0; /* Elimina el padding horizontal específico de móvil */
+        padding: 0;
     }
 
     .acciones_sociales_muestra {
-        justify-content: flex-start; /* Alinea a la izquierda en desktop */
+        justify-content: flex-start;
         gap: 10px;
     }
 
     .acciones_sociales_muestra button {
-        flex: 0 0 auto; /* No crecer ni encoger, tamaño según contenido */
+        flex: 0 0 auto;
         min-width: unset;
-        margin-right: 10px; /* Vuelve al margen original */
+        margin-right: 10px;
     }
 
     .boton_muestra {
-        width: auto; /* Ancho automático */
-        margin: 10px 0; /* Vuelve al margen original */
+        width: auto;
+        margin: 10px 0;
     }
 
     .informacion_creador_muestra {

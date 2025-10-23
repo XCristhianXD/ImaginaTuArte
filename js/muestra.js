@@ -8,6 +8,7 @@ import {
   where,
   getDocs,
   addDoc,
+  deleteDoc, // Importamos deleteDoc
   serverTimestamp,
 } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
@@ -24,9 +25,14 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Variables globales para almacenar el ID del autor del dibujo y el ID del usuario logeado
+let autorDibujoId = null;
+let usuarioLogeadoId = null;
+
 // 📌 Mostrar imagen de perfil en la cabecera
 document.addEventListener("DOMContentLoaded", () => {
   const usuarioActivo = JSON.parse(localStorage.getItem("usuario_activo"));
+  usuarioLogeadoId = localStorage.getItem("usuario_id"); // Obtenemos el ID del usuario logeado
   const headerImg = document.getElementById("header-profile-pic");
 
   if (usuarioActivo && headerImg) {
@@ -64,6 +70,7 @@ async function cargarDibujo(id) {
 
     // 👤 Mostrar autor
     if (data.usuarioId) {
+      autorDibujoId = data.usuarioId; // Guardamos el ID del autor del dibujo
       const usuarioSnap = await getDoc(doc(db, "usuarios", data.usuarioId));
       if (usuarioSnap.exists()) {
         const user = usuarioSnap.data();
@@ -154,9 +161,17 @@ async function cargarComentarios(dibujoId) {
           </strong>
         </div>
         <p class="comentario-texto">${c.texto}</p>
-        <span class="comentario-fecha">${
-          c.fecha instanceof Date ? c.fecha.toLocaleString() : ""
-        }</span>
+        <div class="comentario-footer">
+          <span class="comentario-fecha">${
+            c.fecha instanceof Date ? c.fecha.toLocaleString() : ""
+          }</span>
+          ${
+            (usuarioLogeadoId && c.usuarioId === usuarioLogeadoId) || // Es tu propio comentario
+            (usuarioLogeadoId && autorDibujoId === usuarioLogeadoId) // Eres el autor del dibujo
+              ? `<button class="boton-eliminar-comentario" data-comentario-id="${c.id}">Eliminar</button>`
+              : ""
+          }
+        </div>
       `;
 
       contenedor.appendChild(div);
@@ -170,6 +185,22 @@ async function cargarComentarios(dibujoId) {
       });
     });
 
+    // Configurar el evento de click para los botones de eliminar
+    contenedor.querySelectorAll(".boton-eliminar-comentario").forEach((button) => {
+      button.addEventListener("click", async (event) => {
+        const comentarioId = event.target.dataset.comentarioId;
+        if (confirm("¿Estás seguro de que quieres eliminar este comentario?")) {
+          try {
+            await deleteDoc(doc(db, "comentarios", comentarioId));
+            cargarComentarios(dibujoId); // Recargar comentarios después de eliminar
+          } catch (error) {
+            console.error("Error al eliminar comentario:", error);
+            alert("Error al eliminar el comentario.");
+          }
+        }
+      });
+    });
+
   } catch (err) {
     console.error("Error al cargar comentarios:", err);
     contenedor.innerHTML = "<p>Error al cargar comentarios.</p>";
@@ -179,12 +210,12 @@ async function cargarComentarios(dibujoId) {
 // ✏️ Enviar nuevo comentario
 function prepararCajaComentario(dibujoId) {
   const usuarioActivo = JSON.parse(localStorage.getItem("usuario_activo"));
-  const usuarioId = localStorage.getItem("usuario_id");
+  // usuarioLogeadoId ya se obtiene en DOMContentLoaded
   const fotoPerfil = document.getElementById("comentario-foto");
   const botonEnviar = document.getElementById("enviar-comentario");
   const textarea = document.getElementById("nuevo-comentario");
 
-  if (!usuarioActivo || !usuarioId) {
+  if (!usuarioActivo || !usuarioLogeadoId) {
     textarea.disabled = true;
     textarea.placeholder = "Inicia sesión para comentar.";
     botonEnviar.disabled = true;
@@ -202,7 +233,7 @@ function prepararCajaComentario(dibujoId) {
     try {
       await addDoc(collection(db, "comentarios"), {
         dibujoId,
-        usuarioId,
+        usuarioId: usuarioLogeadoId, // Usamos la variable global
         texto,
         fecha: serverTimestamp(),
       });
