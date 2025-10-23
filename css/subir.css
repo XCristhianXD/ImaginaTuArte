@@ -1,0 +1,241 @@
+/* --------------------
+   📤 Subir Archivo (Diseño Moderno y Responsivo en estilo original)
+-------------------- */
+
+/* Título principal */
+.subir_img_subir {
+    font-size: 38px;
+    font-weight: 800;
+    margin: 40px 0 25px;
+    color: #2c2c2c;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Botón seleccionar archivo */
+.input_xd_subir {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+#input_archivo_subir {
+    display: none;
+}
+
+.btn_subir_archivo {
+    padding: 12px 25px;
+    border: 1px solid #000;
+    border-radius: 8px;
+    background-color: #484e54;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn_subir_archivo:hover {
+    background-color: #5b6166;
+    transform: scale(1.05);
+}
+
+/* Contenedor principal */
+.contenedor_principal_subir {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 900px;
+    background: #f2f2f2;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    margin: 0 auto 60px;
+    transition: all 0.3s ease;
+}
+
+/* Vista previa */
+.contenedor_vista_previa_subir {
+    flex: 1 1 300px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    position: relative;
+    background-color: #fafafa;
+    overflow: hidden;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.contenedor_vista_previa_subir:hover {
+    border-color: #555;
+    background-color: #f7f7f7;
+}
+
+.vista_previa_subir {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    display: none;
+}
+
+/* Sección derecha */
+.seccion_derecha_subir {
+    flex: 1 1 350px;
+    margin-top: 20px;
+    padding: 10px 20px;
+}
+
+.seccion_derecha_subir h2 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+    text-transform: uppercase;
+    border-bottom: 2px solid #484e54;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Inputs y etiquetas */
+.grupo_input_subir {
+    margin-bottom: 20px;
+}
+
+.grupo_input_subir h4 {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #444;
+}
+
+.input_titulo_subir,
+.input_descripcion_subir,
+.input_categoria_subir {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    background-color: #fff;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+.input_titulo_subir:focus,
+.input_descripcion_subir:focus,
+.input_categoria_subir:focus {
+    border-color: #484e54;
+    background-color: #fdfdfd;
+    outline: none;
+}
+
+.input_descripcion_subir {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Botón publicar */
+.btn_publicar_subir {
+    background-color: #292929;
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.btn_publicar_subir:hover {
+    background-color: #000;
+    transform: scale(1.03);
+}
+
+/* --------------------
+   📱 RESPONSIVE DESIGN
+-------------------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+    .contenedor_principal_subir {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .contenedor_vista_previa_subir {
+        width: 100%;
+        height: 280px;
+        margin-bottom: 20px;
+    }
+
+    .seccion_derecha_subir {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+/* Celulares */
+@media (max-width: 600px) {
+    .subir_img_subir {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+
+    .btn_subir_archivo {
+        font-size: 14px;
+        padding: 10px 18px;
+    }
+
+    .contenedor_principal_subir {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .contenedor_vista_previa_subir {
+        height: 220px;
+    }
+
+    .seccion_derecha_subir h2 {
+        font-size: 18px;
+    }
+
+    .input_titulo_subir,
+    .input_descripcion_subir,
+    .input_categoria_subir {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .btn_publicar_subir {
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+}
+
+/* Muy pequeñas (400px o menos) */
+@media (max-width: 400px) {
+    .subir_img_subir {
+        font-size: 24px;
+    }
+
+    .contenedor_vista_previa_subir {
+        height: 200px;
+    }
+
+    .btn_subir_archivo {
+        width: 100%;
+        text-align: center;
+    }
+}

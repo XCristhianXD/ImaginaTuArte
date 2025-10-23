@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/recursos/icon_pagina.png">
+    <title>Subir imagen</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/subir.css">
+</head>
+<body>
+
+<!-- CABECERA GLOBAL -->
+  <header class="cabecera">
+    <div class="izquierda-header">
+      <div class="logo">
+        <img src="/recursos/logo_sin_fondo.png" alt="logo de la pagina">
+      </div>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="contenido_cabecera" id="nav-links">
+      <a href="inicio.html">Inicio</a>
+      <a href="galeria.html">Galería</a>
+      <a href="subir.html">Sube</a>
+      <a href="perfil.html" class="menu-perfil-link">Perfil</a> 
+    </nav>
+
+    <!-- El div del perfil se mantiene para pantallas grandes -->
+    <a href="perfil.html" title="perfil" class="perfil-desktop"> 
+      <div class="perfil">
+        <img id="header-profile-pic" class="hidden" alt="Foto de perfil">
+      </div>
+    </a>
+  </header>
+
+<!-- CONTENIDO PRINCIPAL -->
+<h1 class="subir_img_subir">Subir Archivo</h1>
+
+<main>
+    <form class="input_xd_subir">
+        <input type="file" id="input_archivo_subir" accept="image/*">
+        <label for="input_archivo_subir" class="btn_subir_archivo">Seleccionar Archivo</label>
+    </form>
+
+    <div class="contenedor_principal_subir">
+        <div class="contenedor_vista_previa_subir">
+            <img class="vista_previa_subir" id="vista_previa_subir" src="" alt="Vista previa">
+        </div>
+        <div class="seccion_derecha_subir">
+            <h2>Datos del dibujo</h2>
+            <div class="grupo_input_subir">
+                <h4>Título</h4>
+                <input type="text" class="input_titulo_subir" placeholder="Título">
+            </div>
+            <div class="grupo_input_subir">
+                <h4>Descripción</h4>
+                <textarea class="input_descripcion_subir" placeholder="Descripción"></textarea>
+            </div>
+            <div class="grupo_input_subir">
+                <h4>Categoría</h4>
+                <select class="input_categoria_subir">
+                    <option value="anime">Anime</option>
+                    <option value="paisajes">Paisajes</option>
+                </select>
+            </div>
+            <button type="button" class="btn_publicar_subir">Publicar</button>
+        </div>
+    </div>
+</main>
+
+<!-- ⚙️ PIE DE PÁGINA GLOBAL -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>© 2024 IMAGINART. Todos los derechos reservados.</h3>
+        <h3>Redes Sociales:</h3>
+        <div class="social-icons">
+          <a href="https://discord.com/"><img src="/recursos/dicord_icon.png" alt="Discord"></a>
+          <a href="https://www.instagram.com/"><img src="/recursos/instagram_icon.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com/"><img src="/recursos/youtube_icon.png" alt="YouTube"></a>
+          <a href="https://es-la.facebook.com/"><img src="/recursos/facebook_icon.png" alt="Facebook"></a>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <h3>Contactos:</h3>
+        <h3>• Email: imaginart@gmail.com</h3>
+        <h3>• Teléfono: +591 12345678</h3>
+        <h3>• Web: <a href="#">www.imaginatuarte.com</a></h3>
+      </div>
+    </div>
+  </footer>
+
+<script type="module" src="js/subir.js"></script>
+</body>
+</html>

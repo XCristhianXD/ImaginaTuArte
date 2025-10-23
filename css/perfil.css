@@ -1,0 +1,190 @@
+/* ==========================
+   ESTILOS GENERALES DEL BODY
+========================== */
+body {
+    overflow-x: hidden;
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f5f5f5;
+}
+
+/* ==========================
+   PERFIL DE USUARIO
+========================== */
+.perfil_usuario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    animation: fadeIn 0.5s ease;
+}
+
+.perfil_usuario img {
+    height: 150px;        /* reducido para celular */
+    width: 150px;         /* reducido para celular */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #CACACA;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.perfil_usuario img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+.perfil_usuario h2 {
+    font-size: 22px;      /* tamaño reducido */
+    margin-top: 10px;
+}
+
+/* Botón editar */
+#edit-profile-btn {
+    padding: 12px 25px;   /* reducido para celular */
+    font-size: 16px;      /* reducido */
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    background-color: #777777;
+    cursor: pointer;
+    transition: 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    margin-top: 10px;
+}
+
+#edit-profile-btn:hover {
+    background-color: #5a5a5a;
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+}
+
+/* Info del perfil */
+.info_perfil {
+    padding: 10px 15px;
+    text-align: center;
+}
+
+.info_perfil h2 {
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.info_perfil h3 {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Botones de interacción */
+.botones_perfil {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px;
+}
+
+.botones_perfil button {
+    padding: 10px 20px;  /* reducido para celular */
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.3s ease;
+    font-weight: bold;
+    color: white;
+}
+
+.botones_perfil .me-gusta { background-color: #FF6F6F; }
+.botones_perfil .comentarios { background-color: #6C96FF; }
+.botones_perfil .guardados { background-color: #FFFF68; color: black; }
+
+.botones_perfil button:hover {
+    opacity: 0.85;
+    transform: scale(1.05);
+}
+
+/* ==========================
+   GALERÍA ESTILO PINTEREST
+========================== */
+.gallery-grid {
+    column-width: 280px;       /* tamaño base de cada columna */
+    column-gap: 25px;          /* espacio entre columnas */
+    max-width: 1600px;
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        column-width: 250px;
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        column-width: 220px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        column-width: 180px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery-grid {
+        column-width: 150px;
+        padding: 0 10px;
+    }
+}
+
+/* Contenedores individuales de imágenes */
+.image-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+    break-inside: avoid;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo de las imágenes dentro del contenedor */
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    opacity: 0;               /* Comienza invisible para animación */
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* ==========================
+   ANIMACIONES
+========================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/* Ocultar elementos hasta que carguen */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}

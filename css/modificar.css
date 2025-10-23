@@ -1,0 +1,198 @@
+/* --------------------
+   Formulario de Perfil
+-------------------- */
+.profile-editor {
+    background-color: #fff;
+    padding: 20px; /* Reducir padding para móvil */
+    border-radius: 10px; /* Reducir border-radius ligeramente */
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1); /* Sombra más sutil */
+    width: 95%; /* Ocupa más ancho en móvil */
+    max-width: 500px; /* Mantener un max-width para pantallas grandes */
+    margin: 20px auto; /* Reducir margen superior e inferior */
+    animation: fadeIn 0.5s ease;
+}
+
+h1 {
+    font-size: 24px; /* Ajustar tamaño de fuente para móvil */
+    color: #333;
+    margin-bottom: 20px; /* Reducir margen */
+    text-align: center;
+}
+
+.profile-photo-section {
+    margin-bottom: 20px; /* Reducir margen */
+    display: flex; /* Usar flexbox para centrar y organizar */
+    flex-direction: column; /* Apilar elementos en columna */
+    align-items: center; /* Centrar horizontalmente */
+    gap: 15px; /* Espacio entre la foto y el botón */
+}
+
+.photo-container {
+    display: flex;
+    flex-direction: column; /* Apilar en columna en móviles */
+    align-items: center; /* Centrar elementos */
+    gap: 15px; /* Espacio entre la foto y el botón */
+}
+
+#profile-picture {
+    width: 90px; /* Reducir ligeramente el tamaño del avatar */
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #CACACA;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#profile-picture:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+}
+
+#change-photo-btn {
+    background-color: #777777;
+    color: white;
+    border: none;
+    padding: 10px 18px; /* Ajustar padding del botón */
+    border-radius: 25px; /* Bordes ligeramente menos redondeados */
+    cursor: pointer;
+    font-size: 13px; /* Ajustar tamaño de fuente */
+    transition: 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Ocupar todo el ancho disponible */
+    max-width: 200px; /* Limitar el ancho máximo */
+}
+
+#change-photo-btn:hover {
+    background-color: #5a5a5a;
+    transform: scale(1.05);
+}
+
+.form-group {
+    margin-bottom: 15px; /* Reducir margen */
+}
+
+.form-group label {
+    display: block;
+    font-size: 15px; /* Ajustar tamaño de fuente */
+    color: #333;
+    margin-bottom: 6px; /* Reducir margen */
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px; /* Reducir padding */
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Reducir border-radius */
+    font-size: 15px; /* Ajustar tamaño de fuente */
+    transition: border 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border: 2px solid #464444;
+    outline: none;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 70px; /* Reducir altura mínima */
+}
+
+.botones {
+    display: flex;
+    flex-direction: column; /* Apilar botones en columna para móvil */
+    gap: 10px; /* Reducir espacio entre botones */
+}
+
+.botones button {
+    flex: 1; /* Esto seguirá funcionando, pero al estar en columna, cada botón ocupará el 100% del ancho */
+    padding: 12px; /* Reducir padding */
+    font-size: 15px; /* Ajustar tamaño de fuente */
+    cursor: pointer;
+    border-radius: 25px; /* Reducir border-radius */
+    border: none;
+    color: white;
+    background: #777777;
+    transition: 0.3s ease, transform 0.2s ease;
+    width: 100%; /* Asegurar que los botones ocupen el 100% del ancho disponible */
+}
+
+.botones button:hover {
+    background-color: #5a5a5a;
+    transform: scale(1.03); /* Menor escala en hover para móvil */
+}
+
+#cancel-btn {
+    background-color: #6c757d;
+}
+
+#cancel-btn:hover {
+    background-color: #5a6268;
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0; transform: translateY(-20px);}
+    100% {opacity: 1; transform: translateY(0);}
+}
+
+/* --------------------
+   Ocultar imagen hasta que cargue
+-------------------- */
+.hidden {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.fade-in {
+    display: block !important;
+    opacity: 1;
+}
+
+/* Media Query para pantallas un poco más grandes (tablets pequeñas) */
+@media (min-width: 480px) {
+    .profile-editor {
+        padding: 25px;
+        margin: 30px auto;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    #profile-picture {
+        width: 100px;
+        height: 100px;
+    }
+
+    #change-photo-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        max-width: 250px; /* Aumentar ligeramente el max-width */
+    }
+
+    .form-group label {
+        font-size: 16px;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    textarea {
+        min-height: 80px;
+    }
+
+    .botones {
+        flex-direction: row; /* Volver a la disposición en fila para tablets */
+        gap: 15px;
+    }
+
+    .botones button {
+        padding: 15px;
+        font-size: 16px;
+        width: auto; /* Ancho automático para botones en fila */
+    }
+}

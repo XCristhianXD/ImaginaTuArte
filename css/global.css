@@ -1,0 +1,293 @@
+/* --------------------
+   Estilos Globales
+-------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* evita scroll horizontal */
+}
+
+/* --------------------
+   Cabecera
+-------------------- */
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    background: #CACACA;
+    padding: 0 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex-wrap: wrap;
+}
+
+.izquierda-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cabecera .logo img {
+    height: 80px;
+    transition: transform 0.3s ease;
+}
+
+.cabecera .logo img:hover {
+    transform: scale(1.05);
+}
+
+/* NAV enlaces */
+.contenido_cabecera {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.contenido_cabecera a {
+    font-weight: 600;
+    padding: 8px 15px;
+    font-size: 18px;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background 0.3s, color 0.3s;
+}
+
+.contenido_cabecera a:hover {
+    color: white;
+    background: gray;
+}
+
+/* Perfil (solo para escritorio por defecto) */
+.perfil-desktop { 
+    display: block; /* Visible por defecto en escritorio */
+}
+
+.perfil img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #464444;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.perfil img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* El enlace de perfil dentro del menú de hamburguesa debe estar oculto por defecto */
+.menu-perfil-link {
+    display: none; 
+}
+
+/* --------------------
+   Menú hamburguesa
+-------------------- */
+.menu-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    width: 35px;
+    height: 30px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+.menu-btn span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #333;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* Animación de las barritas al abrir */
+.menu-btn.active span:nth-child(1) {
+    transform: translateY(10px) rotate(45deg);
+}
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+.menu-btn.active span:nth-child(3) {
+    transform: translateY(-10px) rotate(-45deg);
+}
+
+/* --------------------
+   Footer
+-------------------- */
+.footer {
+    background: #2F2F2F;
+    color: white;
+    width: 100%;
+    padding: 30px 40px;
+    box-sizing: border-box;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-left,
+.footer-right {
+    flex: 1 1 300px;
+}
+
+.footer-left h3,
+.footer-right h3 {
+    margin: 5px 0;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.social-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.social-icons img:hover {
+    transform: scale(1.1);
+}
+
+.footer-right a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.footer-right a:hover {
+    color: #ccc;
+}
+
+/* --------------------
+   📱 RESPONSIVO
+-------------------- */
+/* Tablet */
+@media (max-width: 900px) {
+    .menu-btn {
+        display: flex;
+    }
+
+    .cabecera {
+        flex-direction: row; /* Mantener en fila */
+        align-items: center;
+        height: auto;
+        padding: 15px;
+        justify-content: space-between; 
+    }
+
+    .izquierda-header {
+        width: 100%; /* Ocupa todo el ancho */
+        justify-content: space-between; /* Empuja el logo a la izquierda y el menú a la derecha */
+        align-items: center; /* Centra verticalmente */
+        gap: 0; /* No necesitamos gap aquí porque ya usamos justify-content */
+    }
+
+    .contenido_cabecera {
+        display: none;
+        flex-direction: column;
+        width: 100%; 
+        text-align: center;
+        background: #bdbdbd;
+        border-radius: 10px;
+        padding: 10px 0;
+        margin-top: 10px;
+        gap: 10px;
+        animation: fadeDown 0.3s ease;
+        position: absolute; 
+        top: 90px; 
+        left: 0;
+        right: 0;
+        z-index: 999; 
+    }
+
+    .contenido_cabecera a {
+        display: block;
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .contenido_cabecera.active {
+        display: flex;
+    }
+
+    /* Ocultar el perfil de escritorio en tablet y móvil */
+    .perfil-desktop {
+        display: none; 
+    }
+
+    /* Mostrar el enlace de perfil dentro del menú de hamburguesa */
+    .menu-perfil-link {
+        display: block; 
+    }
+
+    @keyframes fadeDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .footer-content {
+        gap: 15px; /* Reducir un poco el espacio entre elementos del footer */
+    }
+}
+
+/* Celular */
+@media (max-width: 600px) {
+    .perfil img {
+        height: 55px;
+        width: 55px;
+    }
+
+    .footer {
+        padding: 20px; /* Reducir el padding general del footer en móviles */
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10px; /* Reducir aún más el espacio entre elementos del footer en móviles */
+    }
+
+    .social-icons {
+        justify-content: center;
+        gap: 10px; /* Reducir el espacio entre iconos sociales */
+    }
+    
+    .footer-left,
+    .footer-right {
+        flex: none; /* Desactivar flex-grow para que no empuje el espacio */
+        width: 100%; /* Ocupa todo el ancho */
+    }
+}

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f5;
+            color: #333;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #5d3f6a;
+            margin-right: 30px;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: #555;
+            margin: 0 15px;
+            font-weight: 500;
+        }
+
+        .nav a:hover {
+            color: #5d3f6a;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            font-size: 20px;
+            margin-left: 20px;
+            color: #777;
+        }
+
+        .profile-pic {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            margin-left: 20px;
+            overflow: hidden;
+        }
+
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .main-content {
+            padding: 30px 50px;
+        }
+
+        .search-bar {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px 12px 50px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .search-bar input::placeholder {
+            color: #aaa;
+        }
+
+        .search-bar .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+        }
+
+        /* === 🎨 GALERÍA ESTILO PINTEREST === */
+        .gallery-grid {
+            column-count: 5;
+            column-gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 1200px) {
+            .gallery-grid { column-count: 4; }
+        }
+        @media (max-width: 900px) {
+            .gallery-grid { column-count: 3; }
+        }
+        @media (max-width: 600px) {
+            .gallery-grid { column-count: 2; }
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: #e0d9e7;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            break-inside: avoid; /* evita cortes entre columnas */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* ✨ Efecto hover tipo Pinterest */
+        .image-container:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #eee;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer p {
+            margin: 0 0 20px 0;
+            font-size: 14px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        .social-links img {
+            width: 30px;
+            height: 30px;
+            vertical-align: middle;
+        }
+
+        .icon::before {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+        }
+
+        .icon.heart::before { content: "\f004"; }
+        .icon.bookmark::before { content: "\f02e"; }
+        .icon.search::before { content: "\f002"; }
+    </style>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <div class="logo">✦ Art Gallery</div>
+            <nav class="nav">
+                <a href="#">Home</a>
+                <a href="#">Explore</a>
+                <a href="#">Create</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <span class="icon heart"></span>
+            <span class="icon bookmark"></span>
+            <div class="profile-pic">
+                <img src="recursos/perfil_aux.png" alt="Profile Picture">
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="search-bar">
+            <span class="search-icon icon search"></span>
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="gallery-grid">
+            <div class="image-container"><img src="recursos/imagen2.jpg" alt="Gallery Image 2"></div>
+            <div class="image-container"><img src="recursos/imagen3.jpg" alt="Gallery Image 3"></div>
+            <div class="image-container"><img src="recursos/imagen4.jpg" alt="Gallery Image 4"></div>
+            <div class="image-container"><img src="recursos/imagen5.jpg" alt="Gallery Image 5"></div>
+            <div class="image-container"><img src="recursos/imagen6.jpg" alt="Gallery Image 6"></div>
+            <div class="image-container"><img src="recursos/imagen7.jpg" alt="Gallery Image 7"></div>
+            <div class="image-container"><img src="recursos/imagen8.jpg" alt="Gallery Image 8"></div>
+            <div class="image-container"><img src="recursos/imagen10.jpg" alt="Gallery Image 10"></div>
+            <div class="image-container"><img src="recursos/imagen11.jpg" alt="Gallery Image 11"></div>
+            <div class="image-container"><img src="recursos/imagen12.jpg" alt="Gallery Image 12"></div>
+            <div class="image-container"><img src="recursos/imagen13.jpg" alt="Gallery Image 13"></div>
+            <div class="image-container"><img src="recursos/imagen14.jpg" alt="Gallery Image 14"></div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>© 2024 ArtGalery. Todos los derechos reservados.</p>
+        <p>Redes:</p>
+        <div class="social-links">
+            <a href="#"><img src="recursos/dicord_icon.png" alt="Discord"></a>
+            <a href="#"><img src="recursos/instagram_icon.png" alt="Instagram"></a>
+            <a href="#"><img src="recursos/youtube_icon.png" alt="Youtube"></a>
+            <a href="#"><img src="recursos/facebook_icon.png" alt="Facebook"></a>
+        </div>
+    </div>
+</body>
+</html>

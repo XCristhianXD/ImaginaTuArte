@@ -1,0 +1,374 @@
+/* --------------------
+   🔹 Botones de usuario
+-------------------- */
+.inicio_registro {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.inicio_registro button {
+    font-weight: 600;
+    font-size: 18px;
+    color: #000;
+    background: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px 20px;
+    transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+
+.inicio_registro button:hover {
+    color: #fff;
+    background: #5d5d5d;
+    transform: scale(1.05);
+}
+
+/* --------------------
+   🍔 Menú hamburguesa
+-------------------- */
+.menu-btn {
+    display: none; /* Oculto por defecto en desktop */
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 110; /* Asegura que esté por encima del menú */
+}
+
+.menu-btn span {
+    width: 28px;
+    height: 3px;
+    background: #000;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+/* Animación para el botón hamburguesa */
+.menu-btn.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.menu-btn.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/* --------------------
+   🌟 Sección Principal
+-------------------- */
+.Destacado {
+    padding-left: 50px;
+    margin-top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c2c2c;
+}
+
+.cuerpo_registro {
+    display: flex;
+    justify-content: center; /* Centrar para mejor vista en general */
+    align-items: flex-start;
+    gap: 30px;
+    padding: 30px 50px;
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+}
+
+.imagen_portada {
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.15);
+    flex: 0 0 auto; /* No crecer ni encoger, tamaño fijo */
+    text-align: center;
+    width: 370px; /* Ancho fijo para la imagen */
+    max-width: 100%; /* Asegura que no se desborde */
+}
+
+.imagen_portada img {
+    height: 450px;
+    width: 350px;
+    object-fit: cover; /* Ajustar imagen manteniendo proporciones y cubriendo el área */
+    object-position: center;
+    border-radius: 10px;
+}
+
+.frase {
+    flex: 1; /* Permitir que la frase ocupe el espacio restante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-width: 300px; /* Ancho mínimo para la frase antes de apilarse */
+}
+
+.frase h1 {
+    background: #CACACA;
+    border-radius: 20px;
+    padding: 25px;
+    font-size: 24px;
+    line-height: 1.4;
+    max-width: 600px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    width: 100%; /* Ocupar el 100% del contenedor de la frase */
+}
+
+/* --------------------
+   🔐 Ventanas Emergentes
+-------------------- */
+.ventana {
+    /* Ocultar por defecto */
+    display: none; 
+
+    position: fixed;
+    z-index: 1000; /* Asegurar que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6); /* Oscurecer más el fondo */
+    padding: 20px; /* Pequeño padding general para la ventana */
+    transition: opacity 0.3s ease;
+    overflow-y: auto; /* Permitir scroll si el contenido es largo */
+    justify-content: center; /* Centrar el contenido */
+    align-items: center; /* Centrar el contenido */
+}
+
+/* Clase para mostrar la ventana */
+.ventana.show-ventana {
+    display: flex; /* Cambiar a flex para mostrarla */
+}
+
+
+.ventana-contenido {
+    background-color: #F2F2F2;
+    margin: auto; /* Centrar vertical y horizontalmente */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 90%; /* Ocupar 90% del ancho en móviles */
+    max-width: 400px; /* Limitar el ancho máximo */
+    border-radius: 12px;
+    box-shadow: 0px 6px 18px rgba(0,0,0,0.2);
+    animation: popup 0.3s ease;
+    position: relative; /* Para posicionar el botón de cerrar */
+}
+
+@keyframes popup {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.ventana-contenido h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+.ventana-contenido form {
+    display: flex;
+    flex-direction: column;
+}
+
+.ventana-contenido label {
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.ventana-contenido input[type="email"],
+.ventana-contenido input[type="password"],
+.ventana-contenido input[type="text"] {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #fff;
+    transition: border 0.3s, background 0.3s;
+}
+
+.ventana-contenido input:focus {
+    border: 2px solid #464444;
+    background: #fdfdfd;
+    outline: none;
+}
+
+.ventana-contenido a {
+    text-align: right;
+    display: block;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #333;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.ventana-contenido a:hover {
+    color: #464444;
+}
+
+.cerrar-ventana {
+    color: #999;
+    position: absolute; /* Posicionar el botón de cerrar */
+    top: 15px;
+    right: 20px;
+    font-size: 32px; /* Aumentar tamaño para móvil */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.cerrar-ventana:hover {
+    color: black;
+}
+
+/* Botones internos */
+.is button, .regis button {
+    background: #464444;
+    color: #F2F2F2;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    max-width: 300px;
+    width: 100%; /* Ocupar todo el ancho disponible */
+    transition: background 0.3s, transform 0.2s;
+}
+
+.is button:hover, .regis button:hover {
+    background: #333;
+    transform: scale(1.05);
+}
+
+/* --------------------
+   📱 RESPONSIVO
+-------------------- */
+@media (max-width: 850px) {
+    .cabecera {
+        padding: 0 20px;
+        justify-content: space-between; /* Ajuste para alinear elementos */
+    }
+
+    .menu-btn {
+        display: flex; /* Mostrar el botón hamburguesa */
+    }
+
+    .inicio_registro {
+        display: none; /* Ocultar por defecto los botones de login/registro */
+        flex-direction: column;
+        align-items: center;
+        background: #CACACA;
+        width: 100%;
+        position: absolute;
+        top: 90px;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        max-height: 0; /* Para la animación de mostrar/ocultar */
+        overflow: hidden; /* Ocultar el contenido desbordado */
+        transition: max-height 0.3s ease-out; /* Animación más suave */
+    }
+
+    .inicio_registro.show {
+        display: flex; /* Mostrar cuando la clase 'show' esté activa */
+        max-height: 150px; /* Ajusta este valor según la altura de tus botones */
+    }
+
+    .inicio_registro button {
+        width: 80%;
+        margin: 5px 0;
+    }
+    
+    .Destacado {
+        padding-left: 20px;
+        font-size: 28px;
+        text-align: center; /* Centrar el título "Destacado" */
+    }
+
+    .cuerpo_registro {
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        text-align: center;
+        gap: 20px; /* Reducir el espacio entre elementos */
+    }
+
+    .imagen_portada {
+        width: 100%; /* Ocupar todo el ancho disponible */
+        max-width: 320px; /* Limitar el tamaño para que no sea enorme */
+    }
+
+    .imagen_portada img {
+        height: 300px; /* Ajustar altura de la imagen */
+        width: 100%; /* Ocupar todo el ancho del contenedor */
+        object-fit: contain; /* Mejor para mantener la imagen visible */
+    }
+
+    .frase {
+        min-width: unset; /* Eliminar el min-width para que se ajuste */
+        width: 100%;
+        padding: 0 10px; /* Añadir padding horizontal para que la frase no pegue a los bordes */
+    }
+
+    .frase h1 {
+        font-size: 20px;
+        padding: 18px;
+    }
+
+    /* Ajustes para las ventanas emergentes en móvil */
+    .ventana {
+        padding: 10px;
+    }
+
+    .ventana-contenido {
+        width: 95%; /* Un poco más de ancho en pantallas muy pequeñas */
+        padding: 20px;
+    }
+
+    .ventana-contenido h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    .ventana-contenido input,
+    .is button, .regis button {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    .cerrar-ventana {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .inicio_registro button {
+        width: 90%;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .imagen_portada img {
+        height: 250px; /* Ajustar más la altura de la imagen */
+        width: 100%;
+    }
+
+    .frase h1 {
+        font-size: 18px;
+        padding: 15px;
+    }
+}

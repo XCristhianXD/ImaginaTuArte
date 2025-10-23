@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modificar Perfil</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/modificar.css">
+</head>
+<body>
+
+<!-- CABECERA IGUAL QUE PERFIL.HTML -->
+  <header class="cabecera">
+    <div class="izquierda-header">
+      <div class="logo">
+        <img src="/recursos/logo_sin_fondo.png" alt="logo de la pagina">
+      </div>
+
+      <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <nav class="contenido_cabecera" id="nav-links">
+      <a href="inicio.html">Inicio</a>
+      <a href="galeria.html">Galería</a>
+      <a href="subir.html">Sube</a>
+      <a href="perfil.html" class="menu-perfil-link">Perfil</a> 
+    </nav>
+
+    <!-- El div del perfil se mantiene para pantallas grandes -->
+    <a href="perfil.html" title="perfil" class="perfil-desktop"> 
+      <div class="perfil">
+        <img id="header-profile-pic" class="hidden" alt="Foto de perfil">
+      </div>
+    </a>
+  </header>
+
+<main class="profile-editor">
+    <h1>Editar perfil</h1>
+
+    <div class="profile-photo-section">
+        <p>Foto de perfil</p>
+        <div class="photo-container">
+            <img id="profile-picture" class="hidden" alt="Foto de perfil">
+            <input type="file" id="upload-photo" accept="image/*" hidden>
+            <button id="change-photo-btn">Cambiar</button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="username">Nombre de usuario</label>
+        <input type="text" id="username" placeholder="Nombre de usuario">
+    </div>
+
+    <div class="form-group">
+        <label for="info">Información</label>
+        <textarea id="info" placeholder="Escribe algo sobre ti"></textarea>
+    </div>
+
+    <div class="botones">
+        <button id="save-changes-btn">Guardar cambios</button>
+        <button id="cancel-btn">Cancelar</button>
+    </div>
+</main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>© 2024 IMAGINART. Todos los derechos reservados.</h3>
+        <h3>Redes Sociales:</h3>
+        <div class="social-icons">
+          <a href="https://discord.com/"><img src="/recursos/dicord_icon.png" alt="Discord"></a>
+          <a href="https://www.instagram.com/"><img src="/recursos/instagram_icon.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com/"><img src="/recursos/youtube_icon.png" alt="YouTube"></a>
+          <a href="https://es-la.facebook.com/"><img src="/recursos/facebook_icon.png" alt="Facebook"></a>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <h3>Contactos:</h3>
+        <h3>• Email: imaginart@gmail.com</h3>
+        <h3>• Teléfono: +591 12345678</h3>
+        <h3>• Web: <a href="#">www.imaginatuarte.com</a></h3>
+      </div>
+    </div>
+  </footer>
+
+<script type="module" src="js/modificar.js"></script>
+</body>
+</html>

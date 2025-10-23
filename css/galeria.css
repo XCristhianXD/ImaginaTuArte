@@ -1,0 +1,198 @@
+/* --------------------
+   GALERÍA ESTILO PINTEREST
+-------------------- */
+
+/* Contenedor principal de la galería */
+.gallery-grid {
+    column-width: 280px;       /* Tamaño base de cada columna */
+    column-gap: 25px;          /* Espacio entre columnas */
+    max-width: 1600px;         /* Ancho máximo del contenedor */
+    margin: 50px auto;
+    padding: 0 30px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+    .gallery-grid {
+        column-width: 250px;
+        padding: 0 25px;
+    }
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        column-width: 220px;
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        column-width: 180px;
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 400px) {
+    .gallery-grid {
+        column-width: 150px;
+        padding: 0 10px;
+    }
+}
+
+/* Contenedores individuales de imágenes */
+.image-container {
+    position: relative;
+    width: 100%; /* Ocupa el 100% de la columna */
+    margin-bottom: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+    box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+    break-inside: avoid; /* Evita que las imágenes se rompan entre columnas */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo de las imágenes dentro del contenedor */
+.image-container img {
+    width: 100%;
+    height: auto; /* Altura automática para mantener la proporción */
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+    opacity: 0;               /* Comienza invisible para animación */
+    animation: fadeIn 0.8s ease forwards;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.97); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+/*________________Categorias.html_________________*/
+.container_2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espacio entre los botones de categoría */
+    margin-bottom: 50px; /* Espacio debajo de los botones */
+    width: 100%; /* Asegura que ocupe todo el ancho disponible para centrar bien */
+}
+
+/* Botones de categoría */
+.category-button { /* Cambiado de .button a .category-button para evitar conflictos */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0;
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    cursor: pointer;
+    width: 400px;
+    height: 200px;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+}
+
+.category-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+.category-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.category-button:hover img {
+    transform: scale(1.1);
+}
+
+.category-button span {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+.category-button:hover span {
+    background-color: rgba(0, 0, 0, 0.7);
+    transform: translateY(-5px);
+}
+
+/* --------------------
+   Secciones dinámicas (categorías)
+-------------------- */
+/* Las secciones que contendrán la galería */
+.category-content { /* Clase para los contenedores de imágenes de categoría */
+    display: none; /* Oculta por defecto */
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.5s ease, max-height 0.5s ease;
+    width: 100%; /* Asegura que ocupe todo el ancho disponible */
+}
+
+.category-content.show {
+    display: block; /* Muestra el grid */
+    opacity: 1;
+    max-height: 5000px; /* Suficiente para todas las imágenes, ajusta si es necesario */
+}
+
+/* --------------------
+   📱 Ajustes responsivos para botones
+-------------------- */
+@media (max-width: 900px) {
+    .category-button {
+        width: 300px;
+        height: 160px;
+    }
+
+    .category-button span {
+        font-size: 18px;
+        padding: 4px;
+    }
+}
+
+@media (max-width: 600px) {
+    .category-button {
+        width: 240px;
+        height: 130px;
+    }
+
+    .category-button span {
+        font-size: 16px;
+        padding: 3px;
+    }
+}
+
+@media (max-width: 400px) {
+    .category-button {
+        width: 180px;
+        height: 100px;
+    }
+
+    .category-button span {
+        font-size: 14px;
+        padding: 2px;
+    }
+}

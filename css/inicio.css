@@ -1,0 +1,76 @@
+/* --------------------
+   GALERÍA ESTILO PINTEREST
+-------------------- */
+
+/* Contenedor principal de la galería */
+.gallery-grid {
+  column-width: 280px;       /* 🔸 Tamaño base de cada columna */
+  column-gap: 25px;          /* Espacio entre columnas */
+  max-width: 1600px;         /* Ancho máximo del contenedor */
+  margin: 50px auto;
+  padding: 0 30px;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1200px) {
+  .gallery-grid {
+    column-width: 250px;
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    column-width: 220px;
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    column-width: 180px;   /* 🔹 2 columnas cómodas en móviles */
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery-grid {
+    column-width: 150px;   /* 🔹 1-2 columnas según tamaño del teléfono */
+    padding: 0 10px;
+  }
+}
+
+/* Contenedores individuales de imágenes */
+.image-container {
+  position: relative;
+  width: 100%;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.15);
+  break-inside: avoid; /* Evita que las imágenes se rompan entre columnas */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Estilo de las imágenes dentro del contenedor */
+.image-container img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  object-fit: cover;        /* 🔹 "cover" para llenar el contenedor */
+  opacity: 0;               /* Comienza invisible para animación */
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Animación de aparición */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.97); }
+  to   { opacity: 1; transform: scale(1); }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/recursos/icon_pagina.png">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/global.css">
+    <title>imaginatuarte</title>
+</head>
+<body>
+    <header class="cabecera">
+    <div class="izquierda-header">
+        <!-- 🔹 Logo -->
+        <div class="logo" title="imaginatuarte">
+        <img src="/recursos/logo_sin_fondo.png" alt="logo de la página">
+        </div>
+
+        <!-- 🔹 Botón menú móvil -->
+        <button class="menu-btn" id="menu-btn" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+        </button>
+    </div>
+
+    <!-- 🔹 Contenedor botones -->
+    <nav class="inicio_registro" id="nav-links">
+        <button class="open-window" data-window="iniciar_sesion_ventana" title="Iniciar Sesión">Iniciar Sesión</button>
+        <button class="open-window" data-window="registro_ventana" title="Registrarte">Registrarse</button>
+    </nav>
+    </header>
+
+
+
+    <h1 class="Destacado">Destacado</h1>
+    <div class="cuerpo_registro">
+        <div class="imagen_portada">
+            <img src="/recursos/portada.jpg" alt="">
+        </div>
+        <div class="frase">
+            <h1>"El arte es la expresión más pura del alma humana."</h1>
+        </div>
+    </div>
+
+    <!-- Ventana Iniciar Sesión -->
+    <div id="iniciar_sesion_ventana" class="ventana">
+        <div class="ventana-contenido">
+            <span class="cerrar-ventana" data-window="iniciar_sesion_ventana">&times;</span>
+            <h2>Iniciar Sesión</h2>
+            <form id="form-login">
+                <label for="login-email">Email *</label>
+                <input type="email" id="login-email" name="login-email" required>
+
+                <label for="login-password">Contraseña *</label>
+                <input type="password" id="login-password" name="login-password" required>
+
+                <a href="#">¿Olvidaste la contraseña?</a>
+                <div class="is">
+                    <button type="submit" id="btn-login">Iniciar Sesión</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Ventana Registro -->
+    <div id="registro_ventana" class="ventana">
+        <div class="ventana-contenido">
+            <span class="cerrar-ventana" data-window="registro_ventana">&times;</span>
+            <h2>Regístrate</h2>
+            <form id="form-register">
+                <label for="username">Nombre de Usuario *</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="register-email">Email *</label>
+                <input type="email" id="register-email" name="register-email" required>
+
+                <label for="register-password">Contraseña *</label>
+                <input type="password" id="register-password" name="register-password" required>
+
+                <label for="confirm_password">Confirma la Contraseña *</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+
+                <div class="regis">
+                    <button type="submit" id="btn-register">Regístrate</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-left">
+        <h3>© 2024 IMAGINART. Todos los derechos reservados.</h3>
+        <h3>Redes Sociales:</h3>
+        <div class="social-icons">
+          <a href="https://discord.com/"><img src="/recursos/dicord_icon.png" alt="Discord"></a>
+          <a href="https://www.instagram.com/"><img src="/recursos/instagram_icon.png" alt="Instagram"></a>
+          <a href="https://www.youtube.com/"><img src="/recursos/youtube_icon.png" alt="YouTube"></a>
+          <a href="https://es-la.facebook.com/"><img src="/recursos/facebook_icon.png" alt="Facebook"></a>
+        </div>
+      </div>
+
+      <div class="footer-right">
+        <h3>Contactos:</h3>
+        <h3>• Email: imaginart@gmail.com</h3>
+        <h3>• Teléfono: +591 12345678</h3>
+        <h3>• Web: <a href="#">www.imaginatuarte.com</a></h3>
+      </div>
+    </div>
+  </footer>
+
+    <script type="module" src="js/index.js"></script>
+</body>
+</html>
